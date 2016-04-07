@@ -50,12 +50,18 @@ git config --global core.autocrlf false
 #     warning: CRLF will be replaced by LF in win.zip.
 #     The file will have its original line endings in your working directory.
 #
+# Message during git commit:
+#
+#     warning: CRLF will be replaced by LF in win.zip.
+#     The file will have its original line endings in your working directory.
+#
 # results in working directory of example-test repository:
-#    linux.zip   => line endings CRLF
-#    win.xip     => line endings CRLF
-#    mix.zip     => line endings: unchanged (\r\n a \n b \r c)
+#    linux.zip   => line endings LF
+#    win.xip     => line endings LF
+#    mix.zip     => line endings: unchanged (\r\n  \n  \r)
 #
 # conclusions
-#    - the conversion is performed
+#    - the conversion during check-in is performed
+#    - the conversion during check-out is not performed
 #
 
