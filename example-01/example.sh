@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -x
 
+rm -rf run
+
 mkdir run
 cd run
 

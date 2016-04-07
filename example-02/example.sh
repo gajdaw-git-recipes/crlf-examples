@@ -4,6 +4,8 @@ set -x
 # the same as example-01 but without .gitattributes file
 # final output is the same
 
+rm -rf run
+
 mkdir run
 cd run
 
