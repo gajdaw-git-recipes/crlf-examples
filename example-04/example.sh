@@ -13,6 +13,7 @@ git config --global core.autocrlf false
 printf "linux \n a \n b \n c" > linux.zip
 printf "win \r\n a \r\n b \r\n c" > win.zip
 printf "mix \r\n a \n b \r c" > mix.zip
+printf "mix2 \r\n a \n b " > mix2.zip
 echo "* eol=crlf" > .gitattributes
 git add -A
 git commit -m first
