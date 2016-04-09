@@ -1,10 +1,10 @@
 <?php
 
 $data = array(
-    "linux \n a \n b \n c" => "linux \\n a \\n b \\n c",
-    "linux \r\n a \r\n b \r\n c" => "linux \\r\\n a \\r\\n b \\r\\n c",
-    "win \r\n a \r\n b \r\n c" => "win \\r\\n a \\r\\n b \\r\\n c",
-    "win \n a \n b \n c" => "win \\n a \\n b \\n c"
+    "linux \n a" => "linux \\n a",
+    "win \r\n a" => "win \\r\\n a",
+    "mix \r\n a \n b" => "mix \\r\\n a \\n b",
+    "all \r\n a \n b \r c" => "all \\r\\n a \\n b \\r c",
 );
 
 echo "=============================================\n";

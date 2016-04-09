@@ -1,13 +1,13 @@
 =============================================
-linux \n a \n b \n c
-2fc602bfc5da57759e3ec1082d9182864b172b34
+linux \n a
+5b39f4bf6175216003e0fbe6b051687ffd2d4969
 =============================================
-linux \r\n a \r\n b \r\n c
-53f136436a7a8596c9b84fd339a4fa90bcb0b17d
+win \r\n a
+b49ecd43554bdb3b6a94bcec03f7b5f24ebd2ac8
 =============================================
-win \r\n a \r\n b \r\n c
-260be02ab8a8cb5782cad4a8bab90e2d054e0708
+mix \r\n a \n b
+f84c01babe9e31df0a7f4d9668ea15cfc8b89154
 =============================================
-win \n a \n b \n c
-0335dacbabdb2928987aac34c75d2faebd3ba3e7
+all \r\n a \n b \r c
+606201043acdcaf229c4299440a05a5db4e7cbee
 =============================================
