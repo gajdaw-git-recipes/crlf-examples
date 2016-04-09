@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 set -x
 
-# the same as example-01 but without core.autocrlf set to true
-# final output is the same
-
 rm -rf run
 
 mkdir run
@@ -13,20 +10,20 @@ mkdir example
 cd example
 git init
 git config --global core.autocrlf false
-printf "linux \n a \n b \n c" > linux.zip
-printf "win \r\n a \r\n b \r\n c" > win.zip
-printf "mix \r\n a \n b \r c" > mix.zip
-printf "mix2 \r\n a \n b " > mix2.zip
+printf "linux \n a" > linux.txt
+printf "win \r\n a" > win.txt
+printf "mix \r\n a \n b" > mix.txt
+printf "all \r\n a \n b \r c" > all.txt
 echo "* text=auto" > .gitattributes
 git add -A
 git commit -m first
 cd ..
 
 
-git clone example  example-test
+git clone example example-test
 cd example-test
 
-printf "win \r\n a \r\n b \r\n c" > win.zip
+printf "win \r\n a" > win.txt
 
 git status -sb
 git diff
@@ -36,44 +33,14 @@ git add -A
 git status -sb
 git diff
 
-hexdump -c linux.zip
-hexdump -c win.zip
-hexdump -c mix.zip
+hexdump -c linux.txt
+hexdump -c win.txt
+hexdump -c mix.txt
+hexdump -c all.txt
 
-cd ..
-cd ..
+hexdump -c linux.txt > ../../output.txt
+hexdump -c win.txt >> ../../output.txt
+hexdump -c mix.txt >> ../../output.txt
+hexdump -c all.txt >> ../../output.txt
 
 git config --global core.autocrlf false
-
-# 0000000   l   i   n   u   x      \n       a      \n       b      \n
-# 0000010   c
-# 0000011
-# + hexdump -c win.zip
-# 0000000   w   i   n      \n       a      \n       b      \n       c
-# 000000f
-# + hexdump -c mix.zip
-# 0000000   m   i   x      \r  \n       a      \n       b      \r       c
-# 0000010
-
-
-#
-# Message during git add -A:
-#
-#     warning: CRLF will be replaced by LF in win.zip.
-#     The file will have its original line endings in your working directory.
-#
-# Message during git commit:
-#
-#     warning: CRLF will be replaced by LF in win.zip.
-#     The file will have its original line endings in your working directory.
-#
-# results in working directory of example-test repository:
-#    linux.zip   => line endings LF
-#    win.xip     => line endings LF
-#    mix.zip     => line endings: unchanged (\r\n  \n  \r)
-#
-# conclusions
-#    - the conversion during check-in is performed
-#    - the conversion during check-out is not performed
-#
-
