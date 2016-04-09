@@ -15,13 +15,7 @@ printf "win \r\n a" > win.txt
 printf "mix \r\n a \n b" > mix.txt
 printf "all \r\n a \n b \r c" > all.txt
 cp ../../../data.bin .
-
-# this rule is missleading
-# auto has no effect
-# eol=lf turns on normalization for all files
-# compare example-01-04
-echo "* text=auto eol=lf" > .gitattributes
-
+echo "* eol=lf" > .gitattributes
 git add -A
 git commit -m first
 cd ..
