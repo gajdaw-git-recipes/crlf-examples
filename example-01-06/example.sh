@@ -45,7 +45,7 @@ hexdump -c linux.txt > ../../output.txt
 hexdump -c win.txt >> ../../output.txt
 hexdump -c mix.txt >> ../../output.txt
 hexdump -c all.txt >> ../../output.txt
-hexdump -c linux.abc > ../../output.txt
+hexdump -c linux.abc >> ../../output.txt
 hexdump -c win.abc >> ../../output.txt
 hexdump -c mix.abc >> ../../output.txt
 hexdump -c all.abc >> ../../output.txt
