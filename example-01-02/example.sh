@@ -10,36 +10,27 @@ mkdir example
 cd example
 git init
 git config --global core.autocrlf false
-printf "linux \n a" > linux.zip
-printf "win \r\n a" > win.zip
-printf "mix \r\n a \n b " > mix.zip
-printf "mix2 \r\n a \n b \r c" > mix2.zip
+printf "linux \n a" > linux.txt
+printf "win \r\n a" > win.txt
+printf "mix \r\n a \n b" > mix.txt
+printf "all \r\n a \n b \r c" > all.txt
 echo "* text=auto" > .gitattributes
 git add -A
 git commit -m first
 cd ..
 
 git config --global core.autocrlf false
-git clone example  example-test
+git clone example example-test
 cd example-test
-hexdump -c linux.zip
-hexdump -c win.zip
-hexdump -c mix.zip
-hexdump -c mix2.zip
 
-# + hexdump -c linux.zip
-# 0000000   l   i   n   u   x      \n       a
-# 0000009
-# + hexdump -c win.zip
-# 0000000   w   i   n      \n       a
-# 0000007
-# + hexdump -c mix.zip
-# 0000000   m   i   x      \n       a      \n       b
-# 000000c
-# + hexdump -c mix2.zip
-# 0000000   m   i   x   2      \r  \n       a      \n       b      \r
-# 0000010   c
-# 0000011
+hexdump -c linux.txt
+hexdump -c win.txt
+hexdump -c mix.txt
+hexdump -c all.txt
+
+hexdump -c linux.txt > ../../output.txt
+hexdump -c win.txt >> ../../output.txt
+hexdump -c mix.txt >> ../../output.txt
+hexdump -c all.txt >> ../../output.txt
 
 git config --global core.autocrlf false
-

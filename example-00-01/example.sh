@@ -21,6 +21,7 @@ cd ..
 git config --global core.autocrlf false
 git clone example example-test
 cd example-test
+
 hexdump -c linux.txt
 hexdump -c win.txt
 hexdump -c mix.txt
@@ -32,4 +33,3 @@ hexdump -c mix.txt >> ../../output.txt
 hexdump -c all.txt >> ../../output.txt
 
 git config --global core.autocrlf false
-
