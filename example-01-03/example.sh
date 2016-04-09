@@ -10,6 +10,7 @@ mkdir example
 cd example
 git init
 git config --global core.autocrlf false
+
 printf "linux \n a" > linux.txt
 printf "win \r\n a" > win.txt
 printf "mix \r\n a \n b" > mix.txt
