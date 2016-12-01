@@ -51,4 +51,31 @@ hexdump -c mix.abc >> ../../output.txt
 hexdump -c all.abc >> ../../output.txt
 hexdump -c data.bin >> ../../output.txt
 
+cd ..
+
+git config --global core.autocrlf true
+git clone example example-test-b
+cd example-test-b
+
+hexdump -c linux.txt
+hexdump -c win.txt
+hexdump -c mix.txt
+hexdump -c all.txt
+hexdump -c linux.abc
+hexdump -c win.abc
+hexdump -c mix.abc
+hexdump -c all.abc
+hexdump -c data.bin
+
+echo "------------------------" >> ../../output.txt
+hexdump -c linux.txt >> ../../output.txt
+hexdump -c win.txt >> ../../output.txt
+hexdump -c mix.txt >> ../../output.txt
+hexdump -c all.txt >> ../../output.txt
+hexdump -c linux.abc >> ../../output.txt
+hexdump -c win.abc >> ../../output.txt
+hexdump -c mix.abc >> ../../output.txt
+hexdump -c all.abc >> ../../output.txt
+hexdump -c data.bin >> ../../output.txt
+
 git config --global core.autocrlf false
